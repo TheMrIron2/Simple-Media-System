@@ -1,0 +1,19 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: SMSMAP - Win32 Debug--------------------
+</h3>
+
+iop-gcc -miop -O2 -G0 -c -IC:/PROGRA~1/ps2dev/ps2sdk/iop/include -IC:/PROGRA~1/ps2dev/ps2sdk/iop/include -IC:/PROGRA~1/ps2dev/ps2sdk/common/include -Iinclude -Wall -fno-builtin  main.c -o main.o
+iop-gcc -miop -O2 -G0 -c -IC:/PROGRA~1/ps2dev/ps2sdk/iop/include -IC:/PROGRA~1/ps2dev/ps2sdk/iop/include -IC:/PROGRA~1/ps2dev/ps2sdk/common/include -Iinclude -Wall -fno-builtin  smap.c -o smap.o
+iop-gcc -miop -nostdlib -s -o SMSMAP.irx main.o smap.o imports.o 
+
+
+
+<h3>Results</h3>
+SMSMAP.IRX - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

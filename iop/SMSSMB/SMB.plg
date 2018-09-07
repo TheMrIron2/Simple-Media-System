@@ -1,0 +1,21 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: SMB - Win32 Debug--------------------
+</h3>
+
+clean all
+process_begin: CreateProcess((null), clean all, ...) failed.
+make (e=2): The system cannot find the file specified.
+make: *** [rebuild] Error 2
+Error executing make.
+
+
+
+<h3>Results</h3>
+smb.irx - 1 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: SMSPWROFF - Win32 Debug--------------------
+</h3>
+
+mkdir -p obj/
+mkdir -p bin/
+iop-gcc -fno-builtin -O2 -G0 -D_IOP -c -Iinclude/ -I../dev9/include/ -ID:/Eugene/MYDOCU~1/SVN/ps2/ps2sdk/iop/kernel/include -ID:/Eugene/MYDOCU~1/SVN/ps2/ps2sdk/common/include -Iinclude -Wall src/poweroff.c -o obj/poweroff.o
+iop-gcc -fno-builtin -fno-builtin -nostdlib -s -o bin/poweroff.irx obj/poweroff.o obj/imports.o obj/exports.o 
+
+
+
+<h3>Results</h3>
+SMSPWROFF.IRX - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

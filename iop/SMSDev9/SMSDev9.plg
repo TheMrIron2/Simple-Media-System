@@ -1,0 +1,21 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: SMSDev9 - Win32 Debug--------------------
+</h3>
+
+Makefile:30: /Defs.make: No such file or directory
+Makefile:31: /iop/Rules.make: No such file or directory
+Makefile:32: /iop/Rules.release: No such file or directory
+make: *** No rule to make target `/iop/Rules.release'.  Stop.
+Error executing make.
+
+
+
+<h3>Results</h3>
+SMSDEV9.IRX - 1 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

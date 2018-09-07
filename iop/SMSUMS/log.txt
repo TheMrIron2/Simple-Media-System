@@ -1,0 +1,22 @@
+Error: 0
+_ums_dopen: start - 0/0
+Error: 0
+Error: 0
+Error: 0
+Error: 0
+Error: 0
+Error: 0
+FAT sector size: 2048
+FATFS_Init: 4
+_ums_mount: 1
+Error: 0
+Error: 0
+_fat_dopen start: 4
+Cache read: 128c00 - 128c00
+Error: 0
+Cache read: 128c00 - 130c00
+Error: 0
+_fat_dopen cont: 6625317
+_fat_dopen end: 'IPOD'/6625317
+_ums_dopen: 6625317
+Error: 0

@@ -1,0 +1,20 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: SMSUMS - Win32 Debug--------------------
+</h3>
+
+mkdir -p obj/
+mkdir -p bin/
+iop-gcc -fno-builtin -O2 -G0 -D_IOP -c  -ID:/Eugene/MYDOCU~1/SVN/ps2/ps2sdk/iop/kernel/include -ID:/Eugene/MYDOCU~1/SVN/ps2/ps2sdk/common/include -Iinclude -Wall -IC:/PROGRA~1/ps2dev/ps2sdk/iop/include -mno-check-zero-division src/ums_driver.c -o obj/ums_driver.o
+iop-gcc -fno-builtin -fno-builtin -nostdlib -s -o bin/ums.irx obj/ums.o obj/ums_driver.o obj/ums_imports.o obj/ums_fat.o obj/ums_cache.o 
+
+
+
+<h3>Results</h3>
+ums.irx - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

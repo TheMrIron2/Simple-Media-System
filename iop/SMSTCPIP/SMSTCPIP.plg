@@ -1,0 +1,20 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: SMSTCPIP - Win32 Debug--------------------
+</h3>
+
+mkdir -p obj/
+mkdir -p bin/
+iop-gcc -fno-builtin -O2 -G0 -c  -ID:/Eugene/MYDOCU~1/SVN/ps2/ps2sdk/iop/kernel/include -ID:/Eugene/MYDOCU~1/SVN/ps2/ps2sdk/common/include -Iinclude  -DLWIP_NOASSERT -Wall -fno-builtin-printf src/tcp.c -o obj/tcp.o
+iop-gcc -fno-builtin -fno-builtin -nostdlib  -s -o bin/SMSTCPIP.irx obj/ps2ip.o obj/inet.o obj/ip.o obj/ip_addr.o obj/ip_frag.o obj/etharp.o obj/tcp_in.o obj/tcp_out.o obj/tcp.o obj/tcpip.o obj/mem.o obj/api_lib.o obj/api_msg.o obj/exports.o obj/imports.o obj/sockets.o obj/netif.o obj/udp.o obj/memp.o obj/icmp.o obj/pbuf.o 
+
+
+
+<h3>Results</h3>
+SMSTCPIP.elf - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: USBD - Win32 Debug--------------------
+</h3>
+
+rm -f -r obj/ bin/
+mkdir -p obj/
+mkdir -p bin/
+iop-gcc -fno-builtin -O2 -G0 -D_IOP -c  -ID:/Eugene/MYDOCU~1/SVN/ps2/ps2sdk/iop/kernel/include -ID:/Eugene/MYDOCU~1/SVN/ps2/ps2sdk/common/include -Iinclude -Wall src/hcd.c -o obj/hcd.o
+iop-gcc -fno-builtin -O2 -G0 -D_IOP -c  -ID:/Eugene/MYDOCU~1/SVN/ps2/ps2sdk/iop/kernel/include -ID:/Eugene/MYDOCU~1/SVN/ps2/ps2sdk/common/include -Iinclude -Wall src/hub.c -o obj/hub.o
+iop-gcc -fno-builtin -O2 -G0 -D_IOP -c  -ID:/Eugene/MYDOCU~1/SVN/ps2/ps2sdk/iop/kernel/include -ID:/Eugene/MYDOCU~1/SVN/ps2/ps2sdk/common/include -Iinclude -Wall src/interface.c -o obj/interface.o
+iop-gcc -fno-builtin -O2 -G0 -D_IOP -c  -ID:/Eugene/MYDOCU~1/SVN/ps2/ps2sdk/iop/kernel/include -ID:/Eugene/MYDOCU~1/SVN/ps2/ps2sdk/common/include -Iinclude -Wall src/mem.c -o obj/mem.o
+iop-gcc -fno-builtin -O2 -G0 -D_IOP -c  -ID:/Eugene/MYDOCU~1/SVN/ps2/ps2sdk/iop/kernel/include -ID:/Eugene/MYDOCU~1/SVN/ps2/ps2sdk/common/include -Iinclude -Wall src/usbd.c -o obj/usbd.o
+iop-gcc -fno-builtin -O2 -G0 -D_IOP -c  -ID:/Eugene/MYDOCU~1/SVN/ps2/ps2sdk/iop/kernel/include -ID:/Eugene/MYDOCU~1/SVN/ps2/ps2sdk/common/include -Iinclude -Wall src/usbio.c -o obj/usbio.o
+iop-gcc -fno-builtin -O2 -G0 -D_IOP -c  -ID:/Eugene/MYDOCU~1/SVN/ps2/ps2sdk/iop/kernel/include -ID:/Eugene/MYDOCU~1/SVN/ps2/ps2sdk/common/include -Iinclude -Wall src/driver.c -o obj/driver.o
+echo "#include \"irx_imports.h\"" > obj/build-imports.c
+cat src/imports.lst >> obj/build-imports.c
+iop-gcc -fno-builtin -O2 -G0 -D_IOP -c  -ID:/Eugene/MYDOCU~1/SVN/ps2/ps2sdk/iop/kernel/include -ID:/Eugene/MYDOCU~1/SVN/ps2/ps2sdk/common/include -Iinclude -Wall -Isrc/ obj/build-imports.c -o obj/imports.o
+rm -f obj/build-imports.c
+echo "#include \"irx.h\"" > obj/build-exports.c
+cat src/exports.tab >> obj/build-exports.c
+iop-gcc -fno-builtin -O2 -G0 -D_IOP -c  -ID:/Eugene/MYDOCU~1/SVN/ps2/ps2sdk/iop/kernel/include -ID:/Eugene/MYDOCU~1/SVN/ps2/ps2sdk/common/include -Iinclude -Wall -Isrc/ obj/build-exports.c -o obj/exports.o
+rm -f obj/build-exports.c
+iop-gcc -fno-builtin -fno-builtin -nostdlib -Wl,-s -o bin/USBD.irx obj/hcd.o obj/hub.o obj/interface.o obj/mem.o obj/usbd.o obj/usbio.o obj/driver.o obj/imports.o obj/exports.o 
+lzma e bin/USBD.irx bin/USBD.irx.lzma
+
+LZMA 4.49 Copyright (c) 1999-2007 Igor Pavlov  2007-07-05
+bin2c bin/USBD.irx.lzma USBD.dmp s_USBD
+rm bin/USBD.irx.lzma
+
+
+
+<h3>Results</h3>
+USBD.irx - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
