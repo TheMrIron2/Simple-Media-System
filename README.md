@@ -15,27 +15,38 @@ Recommended encoding resolutions:
 - For VGA displays: Select a VGA option in SMS and encode at either 640x480, 800x600 or 1024x768.
 - For Full HD displays: Select the 1080i output option in SMS and encode at 960x540, to ensure the scaling is as smooth as possible. You may also choose to encode at a slightly higher resolution, such as 1024x576 or anamorphic 1024x920 for the highest possible pixel count, but this is personal preference.
 - For USB devices: Try to avoid high bitrates. USB 1.1 is quite slow, and as a result I don't recommend anything above 960x540. You can still get perfectly passable experiences with USB, just don't expect miracles.
-- For HDD-enabled PS2s: The best possible way to use SMS. Bitrate is not really an issue, and you can follow the guide below written by "pitrz" from the original SMS site (http://members.casema.nl/eugene_plotnikov/) for the best possible quality. If you wish to do it yourself, basically use the highest resolution you can. 960x540 is a good spot, but 1024x576 also works and so does 1024x768 and so on.
+- For HDD-enabled PS2s: The best possible way to use SMS. Bitrate is not really an issue, and you can follow the guide below written by "pitrz" from the original SMS site (http://web.archive.org/web/20200817003240/http://members.casema.nl/eugene_plotnikov/) for a high quality encode. If you wish to do it yourself, basically use the highest resolution you can; 960x540 is a good spot, but 1024x576 also works and so does 1024x768 and so on (maximum 1024x1024).
 
 ### Encoding Guide
+Originally written by Pitrz.
 
-One of the users asked me to write a small encoding guide to use high resolution mpeg2, so i wrote him a quick one with the pack of needed tools. I guess you already have most of these, but I have finetuned using various collected information and custom quant matrices my settings for high resolution mpeg2, and the quality of the encodes is at least comparable to h.264 at the same bitrate .). I will paste you the guide here, but I guess the only relevant things/information for you are the custom matrix from the archive and the quenc settings I use. It is actually finetuned for 720p content, but SMS can't play that thanks to the texture size limit.
-For maximum size possible (1024*576) there are little artifacts in corners in 720p because we are using too much vram. It really does give excellent quality.
+(from http://web.archive.org/web/20200816043804/http://members.casema.nl/eugene_plotnikov/pitrz/manual.htm)
 
-- Download THIS archive (http://members.casema.nl/eugene_plotnikov/pitrz/pack.rar). It contains all the tools you need. I assume you have proper codecs for playing everything on you computer installed;
-- Install avisynth from tools folder;
-- Unpack quenc somewhere where you like;
-- Copy sagit.xcm to the folder where your quenc is (or somewhere where you can find it later when you will be setting up quenc);
-- Copy the avisynth sample script somewhere and open it in you favourite text editor. You will see two commands, change the first one so that it points to the file you want to encode, and the second one to the resolution you want to use. 
+```- Download THIS archive (http://web.archive.org/web/20200816043811/http://members.casema.nl/eugene_plotnikov/pitrz/pack.rar). It contains all the tools you need. I assume you have proper codecs for playing everything on you computer installed;
+- Install avisynth from the tools folder;
+- Unpack quenc anywhere you'd like;
+- Copy sagit.xcm to the folder where quenc is (or somewhere where you can find it later when you will be setting up quenc);
+- Copy the avisynth sample script somewhere and open it in you favourite text editor.
+You will see two commands; change the first one to point to the file you want to encode, and the second one to the resolution you want to use. 
 
-With the resolution settings you see there, you will get CORRUPTION. You can't have bigger horizontal width then 1024 because of maximum ps2 texture size limit. So my recommendation is probably 960x540 or a little bit more, try a few tests to get picture without any corruption;
+With the resolution settings you see there, you will get CORRUPTION.
+You can't have bigger horizontal width then 1024 because of maximum ps2 texture size limit.
+So my recommendation is probably 960x540 or a little bit more, try a few tests to get picture without any corruption.
 
-- After you have edit this file, fire up quenc program, select the avisynth script, and set everything exactly as it is in Quenc_Settings.jpg. This settings are actually optimal to encode to 720p mpeg2, so you can probably lower the bitrate a little bit. You have to select the Custom quant matrix sagit.xcm which was in the archive. There is also utility qmatrix in the archive which is a editor of custom matrices, with plenty of examples. However the matrix I use is especially good for high resolutions. So if you have set up everything correctly you can start your encode. In the way I have it set up, it is slow, but the quality at the bitrate you get is comparable if not almost equal to h.264. Try playing with some small sample files and you will see what you can get;
+- After you have edited this file, fire up quenc, select the avisynth script, and set everything exactly as it is in Quenc_Settings.jpg.
+This settings are actually optimal to encode to 720p mpeg2, so you can probably lower the bitrate a little bit.
+You have to select the Custom quant matrix sagit.xcm from the archive.
+There is also utility qmatrix in the archive which is a editor of custom matrices, with plenty of examples.
+However, the matrix I use is especially good for high resolutions.
+So if you have set up everything correctly you can start your encode.
+In the way I have it set up, it is slow, but the quality at the bitrate you get is comparable if not equal to h.264.
+Try playing with some small sample files and you will see what you can get.
 
 Peter
  
 Thanks to all authors of the used programs, doom9.org forums and 
 doom9.org forum users.
+```
 
 # Original Readme
 
